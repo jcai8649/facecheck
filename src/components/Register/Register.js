@@ -25,7 +25,7 @@ class Register extends React.Component{
     }
 
     onSubmitSignIn = () => {
-        fetch('http://localhost:3000/register', {
+        fetch('https://floating-ocean-05070.herokuapp.com/register', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -39,7 +39,7 @@ class Register extends React.Component{
             if (user.id){
                 this.props.loadUser(user)
                 this.props.onRouteChange('home');
-            } else {
+            }else {
                 this.setState({errorMsg: 'email already used or information not complete'})
             }
         })
