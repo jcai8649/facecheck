@@ -6,7 +6,7 @@ const ImageLinkForm = ({onInputChange, onButtonSubmit}) => {
     return (
         <div>
             <p className= 'f3'>
-                {'Facecheck will check for faces in your pictures. Give it a try'}
+                {'Facecheck will check for faces in your pictures(.jpeg or .jpg). Give it a try'}
             </p>
             <div className='center'>
                 <div className=' center form pa4 br3 shadow-5'>

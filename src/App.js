@@ -56,20 +56,26 @@ class App extends Component {
   }
 
   calculateFaceLocation = (data) =>{
-    const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box
+    const clarifaiFaceBoxList = data.outputs[0].data.regions
     const image = document.getElementById("inputImage");
     const width = Number(image.width);
     const height = Number(image.height);
-    return {
-      leftCol: clarifaiFace.left_col * width,
-      topRow: clarifaiFace.top_row * height,
-      rightCol: width -  (clarifaiFace.right_col * width),
-      bottowRow: height - (clarifaiFace.bottom_row * height)
+    const boxList = [];
+    for(let i = 0; i < clarifaiFaceBoxList.length; i++){
+      let clarifaiFace = clarifaiFaceBoxList[i].region_info.bounding_box
+      boxList[i] = {
+        leftCol: clarifaiFace.left_col * width,
+        topRow: clarifaiFace.top_row * height,
+        rightCol: width -  (clarifaiFace.right_col * width),
+        bottowRow: height - (clarifaiFace.bottom_row * height)
+      }
     }
+    return boxList;
   }
 
-  displayFaceBox = (box) =>{
-    this.setState({box: box});
+
+  displayFaceBox = (boxList) =>{
+    this.setState({box: boxList});
   }
   onInputChange = (event) => {
     this.setState({input: event.target.value})
@@ -113,7 +119,6 @@ class App extends Component {
       this.setState({isSignedIn: true})
     }
     this.setState({route: route});
-
   }
 
   render() {
