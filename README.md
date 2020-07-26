@@ -4,8 +4,8 @@ A full-stack application with face-detection on images. The application also all
 
 To run the project:
 
-  Clone this repo
+  1. Clone this repo
 
-  Run npm install
+  2. Run npm install
 
-  Run npm demo
+  3. Run npm demo
