@@ -1,5 +1,7 @@
 # facecheck
 
+Build using React, Node.js and PostgreSQL.
+
 To run the project:
 
   1. Clone this repo
