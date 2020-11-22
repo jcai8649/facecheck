@@ -8,4 +8,4 @@ To run the project:
 
   2. Run npm install
 
-  3. Run npm demo
+  3. Run npm start
