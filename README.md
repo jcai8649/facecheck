@@ -1,6 +1,6 @@
 # facecheck
 
-A full-stack application build using React, Node.js and PostgreSQL.
+A full-stack application build using React, Node.js and PostgreSQL
 
 To run the project:
 
